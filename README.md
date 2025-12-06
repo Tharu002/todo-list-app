@@ -19,7 +19,4 @@ A simple and elegant todo list web application to manage your daily tasks.
 2. Open `index.html` in your browser
 3. Start adding your tasks!
 
-## Setup
-```bash
-git clone https://github.com/your-username/todo-list-app.git
-cd todo-list-app
+
