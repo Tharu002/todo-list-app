@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #taskInput {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #addBtn {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            background: #f4f4f4;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>✅ My Todo List</h1>
+    
+    <div>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button id="addBtn">Add</button>
+    </div>
+    
+    <ul id="taskList"></ul>
+    
+    <script>
+        // Simple JavaScript
+        document.getElementById('addBtn').addEventListener('click', function() {
+            const input = document.getElementById('taskInput');
+            const taskText = input.value;
+            
+            if (taskText) {
+                const li = document.createElement('li');
+                li.textContent = taskText;
+                document.getElementById('taskList').appendChild(li);
+                input.value = '';
+            }
+        });
+        
+        // Add task on Enter key
+        document.getElementById('taskInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('addBtn').click();
+            }
+        });
+    </script>
+</body>
+</html>
